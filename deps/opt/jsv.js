@@ -2688,11 +2688,17 @@ var exports = exports || this,
 						// http://www.regular-expressions.info/email.html
 						var reEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 						return !!reEmail.test(instance._value);
+					},
+					"tel": function (instance, report) {
+						// Regular expression taken from:
+						// http://www.regular-expressions.info/email.html
+						var reTel = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/i;
+						return !!reTel.test(instance._value);
 					}
 				}
 				// JOSHFIRE: end of custom code
 				// "formatValidators": {}
-			},
+			},	
 
 			"contentEncoding" : {
 				"type" : "string",
